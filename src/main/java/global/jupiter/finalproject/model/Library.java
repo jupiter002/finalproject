@@ -1,6 +1,7 @@
 package global.jupiter.finalproject.model;
 
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
@@ -13,7 +14,6 @@ import java.time.LocalDateTime;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
 
 public class Library {
 
@@ -37,9 +37,9 @@ public class Library {
     private String lon;
 
 
-
-    @CreatedDate    // jpa, 레코드 생성시 해댕값, 자동입력
-    @Column(insertable = false, updatable = false) // 입력, 수정시 해당 컬럼 제외하고 sql문 생성
+    //@CreatedDate
+    @CreationTimestamp    // jpa, 레코드 생성시 해댕값, 자동입력
+    //@Column(insertable = false, updatable = false) // 입력, 수정시 해당 컬럼 제외하고 sql문 생성
     private LocalDateTime regdata;
 
 }
